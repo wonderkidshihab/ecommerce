@@ -1,5 +1,9 @@
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:robozonebd/screens/home/drawer.dart';
+
+import 'carousel.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -32,7 +36,7 @@ class _HomeState extends State<Home> {
         child: Container(
           child: ListView(
             children: <Widget>[
-
+              CarouselWidget(),
             ],
           ),
         ),
