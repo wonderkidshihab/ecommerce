@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:robozonebd/screens/home/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,21 +14,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Robozone',
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          title: Text('Robozone'),
-          actions: <Widget>[
-            IconButton(icon: Icon(Icons.search, color: Colors.white,), onPressed: (){}),
-            IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white,), onPressed: (){}),
-          ],
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      home: Home(),
     );
   }
 }
