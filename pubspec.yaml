@@ -43,7 +43,24 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/carousel_placeholder_image.png
+      #Carousel Images
+    - assets/images/Carousel/carousel_placeholder_image.png
+      #Horizontal List Images
+    - assets/images/horizontalList/arduino_logo.png
+    - assets/images/horizontalList/book_logo.png
+    - assets/images/horizontalList/bulb_logo.png
+      #Main Grid Images
+    - assets/images/mainGrid/2-pin.jpg
+    - assets/images/mainGrid/7_segment.jpg
+    - assets/images/mainGrid/Alexa.jpg
+    - assets/images/mainGrid/arduino_hathekhori.jpg
+    - assets/images/mainGrid/echo_dot.jpg
+    - assets/images/mainGrid/Mega.jpg
+    - assets/images/mainGrid/nano.jpg
+    - assets/images/mainGrid/pro mini.jpg
+    - assets/images/mainGrid/relayBoard.jpg
+    - assets/images/mainGrid/starter-kit.jpg
+    - assets/images/mainGrid/Uno.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

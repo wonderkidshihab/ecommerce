@@ -15,12 +15,13 @@ class _CarouselWidgetState extends State<CarouselWidget> {
       child: Carousel(
         boxFit: BoxFit.cover,
         images: [
-          AssetImage("assets/images/carousel_placeholder_image.png"),
-          AssetImage("assets/images/carousel_placeholder_image.png"),
-          AssetImage("assets/images/carousel_placeholder_image.png"),
-          AssetImage("assets/images/carousel_placeholder_image.png"),
-          AssetImage("assets/images/carousel_placeholder_image.png"),
+          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
+          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
+          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
+          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
+          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
         ],
+
         indicatorBgPadding: 4,
         dotColor: Colors.red[100],
         dotIncreasedColor: Colors.red[400],

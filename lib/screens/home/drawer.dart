@@ -4,7 +4,7 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       elevation: 0,
-      child: ListView(
+      child: Column(
         children: <Widget>[
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(
@@ -25,55 +25,60 @@ class DrawerWidget extends StatelessWidget {
               ),
             ),
           ),
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              leading: Icon(Icons.home, color: Colors.red,),
-              title: Text("Home")
-            ),
-          ),
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              leading: Icon(Icons.account_circle, color: Colors.red,),
-              title: Text("My Account")
-            ),
-          ),
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              leading: Icon(Icons.shopping_basket, color: Colors.red,),
-              title: Text("My orders")
-            ),
-          ),
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              leading: Icon(Icons.category, color: Colors.red,),
-              title: Text("Categories")
-            ),
-          ),
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              leading: Icon(Icons.favorite, color: Colors.red,),
-              title: Text("Favorites")
-            ),
-          ),
-          Divider(color: Colors.red,),
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              leading: Icon(Icons.settings, color: Colors.grey,),
-              title: Text("Settings")
-            ),
-          ),
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              leading: Icon(Icons.help, color: Colors.green,),
-              title: Text("About Us")
-            ),
+          ListView(
+            shrinkWrap: true,
+            children: <Widget>[
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  leading: Icon(Icons.home, color: Colors.red,),
+                  title: Text("Home")
+                ),
+              ),
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  leading: Icon(Icons.account_circle, color: Colors.red,),
+                  title: Text("My Account")
+                ),
+              ),
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  leading: Icon(Icons.shopping_basket, color: Colors.red,),
+                  title: Text("My orders")
+                ),
+              ),
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  leading: Icon(Icons.category, color: Colors.red,),
+                  title: Text("Categories")
+                ),
+              ),
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  leading: Icon(Icons.favorite, color: Colors.red,),
+                  title: Text("Favorites")
+                ),
+              ),
+              Divider(color: Colors.red,),
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  leading: Icon(Icons.settings, color: Colors.grey,),
+                  title: Text("Settings")
+                ),
+              ),
+              InkWell(
+                onTap: (){},
+                child: ListTile(
+                  leading: Icon(Icons.help, color: Colors.green,),
+                  title: Text("About Us")
+                ),
+              ),
+            ],
           ),
         ],
       ),
