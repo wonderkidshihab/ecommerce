@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:robozonebd/Globals/Scaffold.dart';
+import 'package:robozonebd/Globals/drawer.dart';
+import 'package:robozonebd/Models/products.dart';
 import 'package:robozonebd/screens/home/home.dart';
+import 'package:robozonebd/screens/product/product_details.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +18,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Robozone',
-      home: Home(),
+      home: ScaffoldWidget(
+        child: Home(),
+      ),
     );
   }
 }

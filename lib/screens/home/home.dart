@@ -1,6 +1,6 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:robozonebd/screens/home/drawer.dart';
+import 'package:robozonebd/Globals/drawer.dart';
 import 'package:robozonebd/screens/home/horizontal_list.dart';
 
 import 'carousel.dart';
@@ -14,28 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-        elevation: 0,
-        title: Text('Robozone'),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {}),
-          IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
-              ),
-              onPressed: () {}),
-        ],
-      ),
-      drawer: DrawerWidget(),
-      body: ListView(
+    return ListView(
         shrinkWrap: true,
         children: <Widget>[
           CarouselWidget(),
@@ -54,7 +33,6 @@ class _HomeState extends State<Home> {
           SizedBox(height: 10,),
           GridViewWidget(),
         ],
-      ),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:robozonebd/Models/products.dart';
+import 'package:robozonebd/screens/product/product_details.dart';
 
 class CarouselWidget extends StatefulWidget {
   @override
@@ -13,14 +15,14 @@ class _CarouselWidgetState extends State<CarouselWidget> {
       height: 200,
       width: 600,
       child: Carousel(
-        boxFit: BoxFit.cover,
-        images: [
-          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
-          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
-          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
-          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
-          AssetImage("assets/images/Carousel/carousel_placeholder_image.png"),
-        ],
+        boxFit: BoxFit.fitHeight,
+        images: highlightedProducts.map((product) => AssetImage(product.image)).toList(),
+
+          onImageTap: (index) {
+          print(index);
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ProductDetails(highlightedProducts[index])));
+          },
 
         indicatorBgPadding: 4,
         dotColor: Colors.red[100],
