@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:robozonebd/Globals/Scaffold.dart';
 import 'package:robozonebd/Models/products.dart';
+import 'package:robozonebd/screens/cart.dart';
 import 'package:robozonebd/screens/product/mainPart.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -14,9 +15,7 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   final Product _product;
-
   _ProductDetailsState(this._product);
-
   @override
   Widget build(BuildContext context) {
     return ScaffoldWidget(
@@ -27,7 +26,13 @@ class _ProductDetailsState extends State<ProductDetails> {
           child: Row(
             children: <Widget>[
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    (MaterialPageRoute(
+                      builder: (context) => CartScreen(),
+                    )),
+                  );
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 0.0),
                   child: Container(
@@ -50,27 +55,37 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               ),
               IconButton(
-                color: Colors.red,
-                onPressed: () {},
-                icon: Icon(Icons.add_shopping_cart),
+                color:_product.cart ? Colors.black : Colors.red,
+                onPressed: () {
+                  _product.cart ? productCart.remove(_product): productCart.add(_product);
+                  setState(() {
+                    _product.cart = !_product.cart;
+                    print(_product.cart);
+                  });
+                },
+                icon:_product.cart ? Icon(Icons.remove_shopping_cart) : Icon(Icons.add_shopping_cart),
               ),
               IconButton(
                 color: Colors.red,
-                onPressed: () {},
-                icon: Icon(Icons.favorite_border),
+                onPressed: () {
+                  this.setState(() {
+                    _product.fav ? productFavorite.remove(_product) : productFavorite.add(_product);
+                    _product.fav = !_product.fav;
+                  });
+                },
+                icon: (_product.fav) ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
               ),
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal:10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Container(
             height: 500,
             child: Text(
-              _product.details+_product.details,
-              textAlign: TextAlign.justify,
+              _product.details + _product.details,
               style: TextStyle(
-                fontSize: 15
+                fontSize: 16.5,
               ),
             ),
           ),

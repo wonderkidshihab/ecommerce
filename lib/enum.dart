@@ -1,0 +1,4 @@
+enum states{
+  login,
+  home
+}

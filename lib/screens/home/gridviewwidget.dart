@@ -47,7 +47,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                                 ),
                               ),
                             )),
-                        child: Image(image: AssetImage(item.image)),
+                        child: Image(image: AssetImage(item.image[0])),
                         footer: Container(
                           color: Colors.blue.withOpacity(0.5),
                           child: Padding(

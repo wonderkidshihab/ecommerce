@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:robozonebd/Globals/Scaffold.dart';
 import 'package:robozonebd/Globals/drawer.dart';
 import 'package:robozonebd/Models/products.dart';
+import 'package:robozonebd/enum.dart';
 import 'package:robozonebd/screens/home/home.dart';
+import 'package:robozonebd/screens/login/login.dart';
 import 'package:robozonebd/screens/product/product_details.dart';
+
+import 'Models/user.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,14 +17,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var user = User();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: "Rubik"),
       debugShowCheckedModeBanner: false,
       title: 'Robozone',
-      home: ScaffoldWidget(
-        child: Home(),
-      ),
+      home: FirstScreen(),
     );
   }
 }

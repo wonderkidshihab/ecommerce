@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:robozonebd/Globals/Scaffold.dart';
+import 'package:robozonebd/screens/cart.dart';
+import 'package:robozonebd/screens/favorites.dart';
+import 'package:robozonebd/screens/home/home.dart';
 class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,9 @@ class DrawerWidget extends StatelessWidget {
             shrinkWrap: true,
             children: <Widget>[
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ScaffoldWidget(child: Home())));
+                },
                 child: ListTile(
                   leading: Icon(Icons.home, color: Colors.red,),
                   title: Text("Home")
@@ -43,10 +49,12 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CartScreen()));
+                },
                 child: ListTile(
                   leading: Icon(Icons.shopping_basket, color: Colors.red,),
-                  title: Text("My orders")
+                  title: Text("My cart")
                 ),
               ),
               InkWell(
@@ -57,7 +65,9 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> FavoritesScreen()));
+                },
                 child: ListTile(
                   leading: Icon(Icons.favorite, color: Colors.red,),
                   title: Text("Favorites")

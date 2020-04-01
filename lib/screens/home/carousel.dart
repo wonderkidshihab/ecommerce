@@ -16,10 +16,9 @@ class _CarouselWidgetState extends State<CarouselWidget> {
       width: 600,
       child: Carousel(
         boxFit: BoxFit.fitHeight,
-        images: highlightedProducts.map((product) => AssetImage(product.image)).toList(),
+        images: highlightedProducts.map((product) => AssetImage(product.image[0])).toList(),
 
           onImageTap: (index) {
-          print(index);
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => ProductDetails(highlightedProducts[index])));
           },
