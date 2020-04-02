@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:robozonebd/Globals/drawer.dart';
 import 'package:robozonebd/screens/cart.dart';
-
-class ScaffoldWidget extends StatefulWidget {
+import 'package:robozonebd/screens/search/serchScreen.dart';
+class ScaffoldWidget extends StatelessWidget {
   final Widget child;
 
   ScaffoldWidget({this.child});
-
-  @override
-  _ScaffoldWidgetState createState() => _ScaffoldWidgetState(child);
-}
-
-class _ScaffoldWidgetState extends State<ScaffoldWidget> {
-  final Widget child;
-
-  _ScaffoldWidgetState(this.child);
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +16,14 @@ class _ScaffoldWidgetState extends State<ScaffoldWidget> {
         title: Text('Robozone'),
         actions: <Widget>[
           IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {}),
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchScreen()));
+            },
+          ),
           IconButton(
               icon: Icon(
                 Icons.shopping_cart,

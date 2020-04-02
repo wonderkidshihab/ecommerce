@@ -17,6 +17,10 @@ class _ProductDetailsState extends State<ProductDetails> {
   final Product _product;
   _ProductDetailsState(this._product);
   @override
+  void initState() {
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return ScaffoldWidget(
         child: ListView(
@@ -60,7 +64,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                   _product.cart ? productCart.remove(_product): productCart.add(_product);
                   setState(() {
                     _product.cart = !_product.cart;
-                    print(_product.cart);
                   });
                 },
                 icon:_product.cart ? Icon(Icons.remove_shopping_cart) : Icon(Icons.add_shopping_cart),
