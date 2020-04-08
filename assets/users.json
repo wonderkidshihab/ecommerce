@@ -1,0 +1,75 @@
+[
+  {
+
+    "_id": "5e88d2d9f63044f460ac143e",
+    "name": {
+      "first": "Leigh",
+      "last": "Mejia"
+    },
+    "email": "leigh.mejia@undefined.name",
+    "password": "Tameka"
+  },
+  {
+    "_id": "5e88d2d97ff8986cf0895d89",
+    "name": {
+      "first": "Jami",
+      "last": "Cash"
+    },
+    "email": "jami.cash@undefined.io",
+    "password": "Cecile"
+  },
+  {
+    "_id": "5e88d2d994a9ca2e73d4754a",
+    "name": {
+      "first": "Craig",
+      "last": "Wilkins"
+    },
+    "email": "craig.wilkins@undefined.biz",
+    "password": "Natalie"
+  },
+  {
+    "_id": "5e88d2d989a3c3b94a39c7a7",
+    "name": {
+      "first": "Susanna",
+      "last": "Monroe"
+    },
+    "email": "susanna.monroe@undefined.us",
+    "password": "Dean"
+  },
+  {
+    "_id": "5e88d2d94c64e5d8ec92cff7",
+    "name": {
+      "first": "Schmidt",
+      "last": "Summers"
+    },
+    "email": "schmidt.summers@undefined.com",
+    "password": "Tammy"
+  },
+  {
+    "_id": "5e88d2d953cd253345519bba",
+    "name": {
+      "first": "Belinda",
+      "last": "Compton"
+    },
+    "email": "belinda.compton@undefined.org",
+    "password": "Jeannine"
+  },
+  {
+    "_id": "5e88d2d929cab899fff8783e",
+    "name": {
+      "first": "Peck",
+      "last": "Aguirre"
+    },
+    "email": "peck.aguirre@undefined.me",
+    "password": "Frank"
+  },
+  {
+    "_id": "5e88d2d9762d96d0d5f714fd",
+    "name": {
+      "first": "Francis",
+      "last": "Kemp"
+    },
+    "email": "francis.kemp@undefined.ca",
+    "password": "Middleton"
+  }
+]

@@ -8,79 +8,107 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  List<Product> _products;
   TextEditingController _textEditingController;
 
   @override
   void initState() {
-    _products = [];
     super.initState();
     _textEditingController = TextEditingController();
   }
 
   @override
   Widget build(BuildContext context) {
+    List<Product> _products = [];
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-        elevation: 0,
-        title: Text('Favorites'),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical:8.0),
-            child: Container(
-              width: MediaQuery.of(context).size.width*0.6,
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            Container(
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.5),
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: Colors.red,
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal:15.0),
-                child: TextField(
-                  decoration: InputDecoration.collapsed(hintText: "search"),
-                ),
-              ),
-            ),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: Stack(
-        children: <Widget>[
-          ListView.builder(
-            itemCount: _products.length,
-            itemBuilder: (context, index) {
-              Product product = _products[index];
-              return Card(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Image.asset(
-                      product.image[0],
-                      height: 80,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      width: 200,
-                      child: Text(
-                        "${product.name}",
-                        textScaleFactor: 1.16,
+              child: Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.5),
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: TextField(
+                          controller: _textEditingController,
+                          decoration: InputDecoration.collapsed(
+                            hintText: "search",
+                            hintStyle: TextStyle(color: Colors.white),
+                          ),
+                          onChanged: (val){
+                            products.forEach((product){
+                              print(val);
+                              if(product.name.contains(val) || product.details.contains(val)){
+                                setState(() {
+                                  _products.add(product);
+                                });
+                              }
+                            });
+                          },
+                        ),
                       ),
                     ),
-                  ],
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: ListView.builder(
+                  itemCount: _products.length,
+                  itemBuilder: (context, index) {
+                    Product product = _products[index];
+                    return Card(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Image.asset(
+                            product.image[0],
+                            height: 80,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            width: 200,
+                            child: Text(
+                              "${product.name}",
+                              textScaleFactor: 1.16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-        ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

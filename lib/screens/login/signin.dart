@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:robozonebd/Globals/Scaffold.dart';
+import 'package:robozonebd/Models/user.dart';
+import 'package:robozonebd/backend/auth.dart';
 import 'package:robozonebd/enum.dart';
 import 'package:robozonebd/main.dart';
 import 'package:robozonebd/screens/home/home.dart';
@@ -137,7 +139,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                     ),
                   ),
                 ),
-                onTap: (){
+                onTap: () async {
+                  User user = await Authentication().userSignIn();
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) =>  ScaffoldWidget(child:Home())));
                 },

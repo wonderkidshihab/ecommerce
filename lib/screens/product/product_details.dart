@@ -31,6 +31,12 @@ class _ProductDetailsState extends State<ProductDetails> {
             children: <Widget>[
               GestureDetector(
                 onTap: () {
+                  if(!_product.cart){
+                    setState(() {
+                      productCart.add(_product);
+                      _product.cart = true;
+                    });
+                  }
                   Navigator.of(context).push(
                     (MaterialPageRoute(
                       builder: (context) => CartScreen(),

@@ -1,32 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:robozonebd/Globals/Scaffold.dart';
+import 'package:robozonebd/Models/user.dart';
 import 'package:robozonebd/screens/cart.dart';
 import 'package:robozonebd/screens/favorites.dart';
 import 'package:robozonebd/screens/home/home.dart';
 class DrawerWidget extends StatelessWidget {
+  User _user;
   @override
   Widget build(BuildContext context) {
+    _user = User();
     return Drawer(
       elevation: 0,
       child: Column(
         children: <Widget>[
-          UserAccountsDrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.red,
-            ),
-            accountName: Text("Shihab Uddin"),
-            accountEmail: Text("Contact.shihab.247@gmail.com"),
-            currentAccountPicture: GestureDetector(
-              child: CircleAvatar(
-                backgroundColor: Colors.grey,
-                child: Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+          Container(
+            color: Colors.red,
+            child: Column(
+              children: <Widget>[
+                Text(_user.name ?? "User Name"),
+                Text(_user.email ?? "example"),
+              ],
             ),
           ),
           ListView(
